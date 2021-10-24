@@ -74,7 +74,7 @@
         background: #c4c4c4;
         border-radius: 1rem;
         width:300px;
-        height: 300px;
+        height: 350px;
         box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
         font-size: 2rem;
         text-align: center;
@@ -88,7 +88,8 @@
         justify-content: center;
       }
       
-     input{
+      /* for text filed not radio */
+     .input{
        width:200px;
        height: 30px;
       border: none;
@@ -116,19 +117,27 @@
      #formButton{
       display: flex;
       justify-content: center;
+      margin-top: 10%;
       
       
     }
     .form-btn{
       padding-top: 1rem;
       font-size: 1.5rem;
-      margin-bottom: 1.2rem;
+      margin-bottom: 3rem;
     }
     .hidden{
       display: none;
      
     }
+  .formText{
+    font-size: 1.2rem;
+  }
 
+  input[type="radio"]{
+    display: inline;
+    
+  }
 
    
     </style>
@@ -160,20 +169,25 @@
           </div>
           
           <form>
-            <input type="text" placeholder="Username">
-            <input type="password" placeholder="Password">
+            <input type="text" placeholder="Username" class="input">
+            <input type="password" placeholder="Password" class="input">
 
-            <input type="email" placeholder="email" class= "hidden email" >
+            <input type="email" placeholder="email" class= "hidden email input" >
         
-            <div id="formButton">
-              
-              <button type="submit" class="button">Login</button>
-            </div>
+            <div id="gender" class="hidden">
+                 <input type="radio" value="male" id="male" name="gender"  checked >
+                 <label for="male" class="formText">Male</label>
+               <input type="radio" id="female" name="gender" value="female">
+               <label for="female" class="formText">Female</label>
 
-            <div id="gender">
-               <span>Gender</span>
-               <input type="radio">
-            </div>
+       
+              
+              </div>
+              <div id="formButton">
+
+                <button type="submit" class="button">Login</button>
+              </div>
+
             
           </form>
         </div>
@@ -194,6 +208,7 @@
     mode.addEventListener("click",()=>{
       const type=mode.textContent.toLocaleLowerCase().split(" ")[0];
       const emailDom=document.querySelector('.email');
+      const genderDom=document.querySelector('#gender');
       switch (type) {
         
         case "login":
@@ -201,11 +216,14 @@
           emailDom.classList.add("hidden");
           buttonDom.textContent="Login";
           mode.classList.toggle("selected");
+          genderDom.classList.add("hidden");
+
           clicked= "login";
           break;
           case "register":
             if(clicked==="register") return;
             emailDom.classList.toggle("hidden");
+            genderDom.classList.remove("hidden");
             buttonDom.textContent="Register";
             clicked="register"
             break;
