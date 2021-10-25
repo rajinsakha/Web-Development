@@ -216,7 +216,7 @@
         
         case "login":
          
-          if(clicked==="login") return;
+          if(clicked==="login") return;//this prevent from double clicking
          
           emailDom.classList.add("hidden");
           buttonDom.textContent="Login";
@@ -226,7 +226,7 @@
           clicked= "login";
           break;
           case "register":
-            if(clicked==="register") return;
+            if(clicked==="register") return; //this prevent from double clicking
             emailDom.classList.toggle("hidden");
             genderDom.classList.remove("hidden");
             buttonDom.textContent="Register";
@@ -243,8 +243,8 @@
         const type=buttonDom.textContent.toLocaleLowerCase();
         switch ( type) {
           case "login":
-          if(usernameDom.value===""||passwordDom.value===""){
-            e.preventDefault();
+          if(usernameDom.value===""||passwordDom.value===""){//to avoid invalid login 
+            e.preventDefault();//this prevent from reloading of the page
             return;
           } 
           console.log(usernameDom.value)
@@ -253,8 +253,8 @@
             break;
         
           case "register":
-          if(usernameDom.value===""||passwordDom.value==="" || emailDom.value===""){
-            e.preventDefault();
+          if(usernameDom.value===""||passwordDom.value==="" || emailDom.value===""){//to prevent invaild register
+            e.preventDefault();//this prevent from reloading of the page
             return;
           } 
             formDom.textContent="Thank You!! You Have Sucessfully Registered";
