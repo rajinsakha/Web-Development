@@ -169,8 +169,8 @@
           </div>
           
           <form>
-            <input type="text" placeholder="Username" class="input">
-            <input type="password" placeholder="Password" class="input">
+            <input type="text" placeholder="Username" class="input" id="username">
+            <input type="password" placeholder="Password" class="input" id="password">
 
             <input type="email" placeholder="email" class= "hidden email input" >
         
@@ -203,16 +203,21 @@
   const loginTextDom=Array.from(document.querySelector(".form-btn").children);
   const formDom=document.querySelector("#form");
   const buttonDom=document.querySelector("button");
+  const emailDom=document.querySelector('.email');
+  const genderDom=document.querySelector('#gender');
+  const usernameDom=document.querySelector('#username');
+  const passwordDom=document.querySelector('#password');
+  let clicked=null;
+
   loginTextDom.forEach(mode=>{
-    
     mode.addEventListener("click",()=>{
       const type=mode.textContent.toLocaleLowerCase().split(" ")[0];
-      const emailDom=document.querySelector('.email');
-      const genderDom=document.querySelector('#gender');
       switch (type) {
         
         case "login":
+         
           if(clicked==="login") return;
+         
           emailDom.classList.add("hidden");
           buttonDom.textContent="Login";
           mode.classList.toggle("selected");
@@ -238,13 +243,14 @@
         const type=buttonDom.textContent.toLocaleLowerCase();
         switch ( type) {
           case "login":
-      
+          if(usernameDom.value===""||passwordDom.value==="") return;
+          console.log(usernameDom.value)
             formDom.textContent="Thank You!! You Have Sucessfully Logedin";
             formDom.classList.add("flexTextCenter")
             break;
         
           case "register":
-      
+          if(usernameDom.value===""||passwordDom.value==="" || emailDom.value==="") return;
             formDom.textContent="Thank You!! You Have Sucessfully Registered";
             formDom.classList.add("flexTextCenter")
             break;
@@ -252,7 +258,7 @@
             break;
         }
       });
-      let clicked=null;
+  
     
     console.log(loginTextDom)
     </script>
