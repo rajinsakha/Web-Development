@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mega Store</title>
     <style>     
+    /* for displaying font from external source in CSS */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
       * {
         margin: 0;
@@ -13,10 +14,11 @@
         box-sizing: border-box;
       }
       body {
+        background: linear-gradient(grey,white);
         font-family: 'Poppins', sans-serif;
       }
       .navbar {
-        display: flex;
+        display: flex; /*It makes the container flexible*/
         align-items: center;
         max-height: 20vh;
         
@@ -39,6 +41,10 @@
       a {
         text-decoration: none;
         color: black;
+        font-size: 20px;
+      }
+      a:hover{
+        color: red;
       }
       p {
         color: black;
@@ -55,7 +61,7 @@
         align-items: center;
         flex-wrap: wrap;
         justify-content: space-around;
-        max-height: 80vh;
+        max-height: 77vh;
       }
       .col-2 {
         flex-basis: 50%;
@@ -67,6 +73,7 @@
       }
       .right {
         text-align: start;
+        
       }
       .button {
         display: inline-block;
@@ -75,13 +82,15 @@
         padding: 8px 30px;
         margin: 30px 0;
         border-radius: 30px;
+      
       }
-      body {
-         background: linear-gradient(grey,white);
-              }  
+      .button:hover {
+       background: #563434;
+      }
      h2{
        font-size: 2em;
      }
+   
     </style>
   </head>
   <body>
@@ -93,10 +102,10 @@
         </div>
         <nav>
           <ul>
-            <li><a href="">Home</a></li>
-            <li><a href="">About us</a></li>
-            <li><a href="product.html">Products</a></li>
-            <li><a href="">Contact</a></li>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="about.html">About us</a></li>
+            <li><a href="">Products</a></li>
+            <li><a href="contact.html">Contact</a></li>
             <li><a href="account.html">Account</a></li>
           </ul>
         </nav>
@@ -116,10 +125,7 @@
         <div class="col-2 right" >
           <img src="images/favpng_apple-watch-series-2-screen-protector.png" alt="apple watch"/>
         </div>
-      </div>
-    </div>
     </div>
   
     </body>
-  </body>
 </html>
