@@ -47,7 +47,99 @@
         padding-right: 25px;
       }
       body {
-         background: linear-gradient(grey,white);}
+         background: linear-gradient(grey,white);
+        }
+
+      input ,button{
+        display: block;
+        margin: 2%;
+      }
+
+      main{
+        width:100%;
+        max-height: 80vh;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        
+      }
+      #form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 7%;
+        padding-top: 6px;
+        border: solid 1px black;
+        background: #c4c4c4;
+        border-radius: 1rem;
+        width:300px;
+        height: 350px;
+        box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+        font-size: 2rem;
+        text-align: center;
+        padding:0 5px;
+        
+      }
+
+      /* to center the thank you text after button click */
+      .flexTextCenter{
+
+        justify-content: center;
+      }
+      
+      /* for text filed not radio */
+     .input{
+       width:200px;
+       height: 30px;
+      border: none;
+      -webkit-appearance: none;
+      -ms-appearance: none;
+      appearance: none;
+      background: #f2f2f2;
+      padding: 2%;
+      border-radius: 3px;
+      font-size: 15px;
+      font-weight: bold;
+      margin-bottom: 1rem;
+  
+  
+
+     }
+
+     button{
+       width:80px;
+       height: 30px;
+       
+       
+     }
+
+     #formButton{
+      display: flex;
+      justify-content: center;
+      margin-top: 10%;
+      
+      
+    }
+    .form-btn{
+      padding-top: 1rem;
+      font-size: 1.5rem;
+      margin-bottom: 3rem;
+    }
+    .hidden{
+      display: none;
+     
+    }
+  .formText{
+    font-size: 1.2rem;
+  }
+
+  input[type="radio"]{
+    display: inline;
+    
+  }
+
+   
     </style>
 </head>
 <body>
@@ -67,21 +159,113 @@
           </ul>
         </nav>
       </div>
+      <main>
 
-      <div class="form-container">
-      <div class="form-btn">
-          <span>Login</span>
-          <span>Register</span>
-      </div>
-     
-      <form>
-          <input type="text" placeholder="Username"> <br> <br>
-          <input type="password" placeholder="Password">
+        <div id="form">
+          
+          <div class="form-btn">
+            <span>Login |</span>
+            <span>Register</span>
+          </div>
+          
+          <form>
+            <input type="text" placeholder="Username" class="input" id="username">
+            <input type="password" placeholder="Password" class="input" id="password">
 
-      </form>
+            <input type="email" placeholder="email" class= "hidden email input" >
+        
+            <div id="gender" class="hidden">
+                 <input type="radio" value="male" id="male" name="gender"  checked >
+                 <label for="male" class="formText">Male</label>
+               <input type="radio" id="female" name="gender" value="female">
+               <label for="female" class="formText">Female</label>
 
+       
+              
+              </div>
+              <div id="formButton">
+
+                <button type="submit" class="button">Login</button>
+              </div>
+
+            
+          </form>
+        </div>
+       
+
+        
       </div>
-      </div>
+    </div>
     
+  </main>
 </body>
+<script>
+  const loginTextDom=Array.from(document.querySelector(".form-btn").children);
+  const formDom=document.querySelector("#form");
+  const buttonDom=document.querySelector("button");
+  const emailDom=document.querySelector('.email');
+  const genderDom=document.querySelector('#gender');
+  const usernameDom=document.querySelector('#username');
+  const passwordDom=document.querySelector('#password');
+  let clicked=null;
+
+  loginTextDom.forEach(mode=>{
+    mode.addEventListener("click",()=>{
+      const type=mode.textContent.toLocaleLowerCase().split(" ")[0];
+      switch (type) {
+        
+        case "login":
+         
+          if(clicked==="login") return;//this prevent from double clicking
+         
+          emailDom.classList.add("hidden");
+          buttonDom.textContent="Login";
+          mode.classList.toggle("selected");
+          genderDom.classList.add("hidden");
+
+          clicked= "login";
+          break;
+          case "register":
+            if(clicked==="register") return; //this prevent from double clicking
+            emailDom.classList.toggle("hidden");
+            genderDom.classList.remove("hidden");
+            buttonDom.textContent="Register";
+            clicked="register"
+            break;
+            
+            default:
+              break;
+        }
+        
+      })
+    })
+      buttonDom.addEventListener("click",(e)=>{ 
+        const type=buttonDom.textContent.toLocaleLowerCase();
+        switch ( type) {
+          case "login":
+          if(usernameDom.value===""||passwordDom.value===""){//to avoid invalid login 
+            e.preventDefault();//this prevent from reloading of the page
+            return;
+          } 
+          console.log(usernameDom.value)
+            formDom.textContent="Thank You!! You Have Sucessfully Logedin";
+            formDom.classList.add("flexTextCenter")
+            break;
+        
+          case "register":
+          if(usernameDom.value===""||passwordDom.value==="" || emailDom.value===""){//to prevent invaild register
+            e.preventDefault();//this prevent from reloading of the page
+            return;
+          } 
+            formDom.textContent="Thank You!! You Have Sucessfully Registered";
+            formDom.classList.add("flexTextCenter")
+            break;
+          default:
+            break;
+        }
+      });
+  
+    
+    console.log(loginTextDom)
+    </script>
 </html>
