@@ -11,7 +11,7 @@
         padding: 0;
         box-sizing: border-box;
       }
-         .navbar {
+       .navbar {
         display: flex;
         align-items: center;
         max-height: 20vh;
@@ -35,9 +35,11 @@
       a {
         text-decoration: none;
         color: black;
+        font-size: 20px;
       }
       p {
         color: black;
+        font-size: 20px;
       }
       .container {
         max-width: 100%;
@@ -153,10 +155,10 @@
         <nav>
           <ul>
             <li><a href="home.html">Home</a></li>
-            <li><a href="">About us</a></li>
+            <li><a href="about.html">About us</a></li>
             <li><a href="">Products</a></li>
-            <li><a href="">Contact</a></li>
-            <li><a href="">Account</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="account.html">Account</a></li>
           </ul>
         </nav>
       </div>
@@ -255,7 +257,7 @@
         
           case "register":
           if(usernameDom.value===""||passwordDom.value==="" || emailDom.value===""){//to prevent invaild register
-            e.preventDefault();//this prevent from reloading of the page
+            e.preventDefault();//this prevents from reloading of the page
             return;
           } 
             formDom.textContent="Thank You!! You Have Sucessfully Registered";

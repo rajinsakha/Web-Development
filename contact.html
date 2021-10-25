@@ -1,33 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <title>Contact</title>
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
-     * {
+      @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
+      * {
         margin: 0;
         padding: 0;
-        box-sizing: border-box;  
+        box-sizing: border-box;
       }
       body {
-        font-family: 'Poppins', sans-serif;
-         background: linear-gradient(grey,white);
+        font-family: "Poppins", sans-serif;
+        background: linear-gradient(grey, white);
       }
       .navbar {
         display: flex; /*It makes the container flexible*/
         align-items: center;
         max-height: 20vh;
-        
       }
       nav {
         flex: 1;
         text-align: right;
         align-self: flex-start;
         padding-top: 2%;
-
       }
       nav ul {
         display: inline-block;
@@ -52,33 +54,59 @@
         padding-left: 25px;
         padding-right: 25px;
       }
-      .row {
+
+      input[type="text"],
+      [type="tel"],
+      [type="email"],
+      textarea {
+        width: 100%;
+        padding: 6px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-top: 6px;
+        margin-bottom: 16px;
+        resize: vertical;
+      }
+
+      input[type="submit"] {
+        background-color: #04aa6d;
+        color: white;
+        padding: 6px 20px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+      #message {
+        height: 200px;
+      }
+      input[type="submit"]:hover {
+        background-color: #45a049;
+      }
+
+      .form {
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 30px;
+      }
+      .mail {
+        font-size: 20px;
+      }
+      .about {
         display: flex;
-        align-items: center;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        max-height: 80vh;
       }
-      .col-2 {
+      .form {
         flex-basis: 50%;
-        height: 100%;
       }
-      .col-2 img {
-        max-width: 75%;
-        text-align: start;
-      }
-      .right {
-        text-align: start;
-      }
-      .button {
-        display: inline-block;
-        background: #ff523b;
-        color: #fff;
-        padding: 8px 30px;
-        margin: 30px 0;
-        border-radius: 30px;
+      .info {
+        flex-basis: 50%;
+        text-align: center;
+        padding: 50px 0;
       }
       
+      .no{
+        font-size:30px;
+      }
     </style>
   </head>
   <body>
@@ -89,26 +117,67 @@
         </div>
         <nav>
           <ul>
-            <li><a href="">Home</a></li>
-            <li><a href="">About us</a></li>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="about.html">About us</a></li>
             <li><a href="">Products</a></li>
-            <li><a href="">Contact</a></li>
-            <li><a href="">Account</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="account.html">Account</a></li>
           </ul>
         </nav>
       </div>
-      <div class="form">
-          <h1>Contact Us:</h1><br>
-          <h2>Send your Comments:</h2>
-          <label for="fname">Full Name</label><br>
-          <input type="text" id="fname" name="fname"><br><br>
-          <label for="email">Email</label><br>
-          <input type="email" id="email" name="email"><br><br>
-          <label for="phone">Phone</label><br>
-          <input type="tel" id="phone" name="phone" pattern="[0-9]{10}"><br><br>
-          <label for="message">Message</label><br>
-          <textarea id="message" name="message" rows="4" col="20"></textarea><br>
-          <input type="submit" id="btn" value="Send Message">
+      <h1><u>Contact Us</u></h1>
+      <br />
+      <div class="about">
+        <div class="form">
+          <label for="fname">Full Name</label><br />
+          <input
+            type="text"
+            id="fname"
+            name="fname"
+            placeholder="Your Full Name"
+          /><br />
+
+          <label for="email">Email</label><br />
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Your Email Address"
+          /><br />
+
+          <label for="phone">Phone</label><br />
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            placeholder="Your Phone Number"
+          /><br />
+
+          <label for="message">Message</label><br />
+          <textarea
+            id="message"
+            name="message"
+            placeholder="Write your message"
+          ></textarea
+          ><br />
+
+          <input type="submit" value="Send Message" />
+        </div>
+        <div class="info">
+          <i class="fa fa-phone" aria-hidden="true"><p class="no">9849894866</p></i>
+          <i class="fa fa-envelope" style="font-size: 20px;"></i>
+            <a class="mail" href="mailto:rajinsakha07@gmail.com"
+              ><u>&nbsp;rajinsakha07@gmail.com</u></a
+            ></i
+          >
+          <h3>Main Branch Kathmandu</h3>
+          <h4>
+            Tinkune,<br />
+            Kathmandu,<br />
+            Nepal
+          </h4>
+        </div>
       </div>
-      </div>
+    </div>
+  </body>
 </html>
