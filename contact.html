@@ -1,21 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mega Store</title>
-    <style>     
-    /* for displaying font from external source in CSS */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-      * {
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+     * {
         margin: 0;
         padding: 0;
-        box-sizing: border-box;
+        box-sizing: border-box;  
       }
       body {
-        background: linear-gradient(grey,white);
         font-family: 'Poppins', sans-serif;
+         background: linear-gradient(grey,white);
       }
       .navbar {
         display: flex; /*It makes the container flexible*/
@@ -58,7 +57,7 @@
         align-items: center;
         flex-wrap: wrap;
         justify-content: space-around;
-        max-height: 77vh;
+        max-height: 80vh;
       }
       .col-2 {
         flex-basis: 50%;
@@ -70,7 +69,6 @@
       }
       .right {
         text-align: start;
-        
       }
       .button {
         display: inline-block;
@@ -79,18 +77,11 @@
         padding: 8px 30px;
         margin: 30px 0;
         border-radius: 30px;
+      }
       
-      }
-      .button:hover {
-       background: #563434;
-      }
-     h2{
-       font-size: 2em;
-     }
     </style>
   </head>
   <body>
-
     <div class="container">
       <div class="navbar">
         <div class="logo">
@@ -106,22 +97,18 @@
           </ul>
         </nav>
       </div>
-      <div class="row">
-        <div class="col-2">
-          <h1>Get the Universe</h1>
-            <h2>On your Wrist!</h2> <br>
-          <p>
-            Apple Watch is a wearable smartwatch that allows<br />users to
-            accomplish a variety of tasks, including<br />
-            making phone calls, sending text messages,<br />
-            measuring blood pressure, reading emails and so on.
-          </p>
-          <a href="" class="button">Explore Now &#8594;</a>
-        </div>
-        <div class="col-2 right" >
-          <img src="images/favpng_apple-watch-series-2-screen-protector.png" alt="apple watch"/>
-        </div>
-    </div>
-  
-    </body>
+      <div class="form">
+          <h1>Contact Us:</h1><br>
+          <h2>Send your Comments:</h2>
+          <label for="fname">Full Name</label><br>
+          <input type="text" id="fname" name="fname"><br><br>
+          <label for="email">Email</label><br>
+          <input type="email" id="email" name="email"><br><br>
+          <label for="phone">Phone</label><br>
+          <input type="tel" id="phone" name="phone" pattern="[0-9]{10}"><br><br>
+          <label for="message">Message</label><br>
+          <textarea id="message" name="message" rows="4" col="20"></textarea><br>
+          <input type="submit" id="btn" value="Send Message">
+      </div>
+      </div>
 </html>
