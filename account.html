@@ -243,14 +243,20 @@
         const type=buttonDom.textContent.toLocaleLowerCase();
         switch ( type) {
           case "login":
-          if(usernameDom.value===""||passwordDom.value==="") return;
+          if(usernameDom.value===""||passwordDom.value===""){
+            e.preventDefault();
+            return;
+          } 
           console.log(usernameDom.value)
             formDom.textContent="Thank You!! You Have Sucessfully Logedin";
             formDom.classList.add("flexTextCenter")
             break;
         
           case "register":
-          if(usernameDom.value===""||passwordDom.value==="" || emailDom.value==="") return;
+          if(usernameDom.value===""||passwordDom.value==="" || emailDom.value===""){
+            e.preventDefault();
+            return;
+          } 
             formDom.textContent="Thank You!! You Have Sucessfully Registered";
             formDom.classList.add("flexTextCenter")
             break;
