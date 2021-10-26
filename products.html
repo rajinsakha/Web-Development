@@ -378,7 +378,9 @@ const optionDom=document.querySelector(".options")
 
 menuDom.addEventListener("click",(e)=>{  //starts open animation
   const mode=optionDom.getAttribute('class').split(" ");
- if(mode.includes("closeMenu")) return console.log(mode);//to avoid clicking while menu is closing
+ if(mode.includes("closeMenu")){
+  optionDom.classList.remove("closeMenu");
+ } //to avoid clicking while menu is closing
   console.log(optionDom.getAttribute('class'))
   optionDom.classList.toggle("openMenu");
   optionDom.classList.toggle("hidden");
