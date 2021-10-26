@@ -112,6 +112,9 @@
       .no{
         font-size:30px;
       }
+      .form{
+        font-size: 24px;
+      }
     </style>
   </head>
   <body>
@@ -166,7 +169,7 @@
           ></textarea
           ><br />
 
-          <input type="submit" value="Send Message" />
+          <input type="submit" value="Send Message" class="submit" />
         </div>
         <div class="info">
           <i class="fa fa-phone" aria-hidden="true" style="font-size: 30px;">&nbsp;9849894866</i><br><br>
@@ -183,4 +186,14 @@
       </div>
     </div>
   </body>
+  <script>
+    const buttonDom=document.querySelector(".submit");
+    const formDom=document.querySelector(".form")
+    buttonDom.addEventListener("mousedown",()=>{
+      formDom.textContent="Thank You For Contating Us!!We Will Get Back To You Soon.";
+      formDom.style.display="flex";
+      
+      formDom.style["align-items"]="center"
+    })
+  </script>
 </html>

@@ -134,7 +134,7 @@
       padding-top: 1rem;
       font-size: 1.5rem;
       margin-bottom: 3rem;
-      cursor:default;
+      cursor:pointer;
     }
     .hidden{
       display: none;
@@ -149,6 +149,25 @@
     
   }
 
+  .selected::before{  /*add greem div below selected text */
+    background: green;
+    content: "";
+    width:100%;
+    height: 5px;
+    border-radius: 5px;
+    position: absolute;
+    bottom: -0.6rem;
+  
+
+    left: 50%;
+    transform: translateX(-50%);
+    /* display: inline-block; */
+  }
+
+  .login,.register{
+    position: relative;
+    /* display: inline-block; */
+  }
    
     </style>
 </head>
@@ -174,8 +193,9 @@
         <div id="form">
           
           <div class="form-btn">
-            <span>Login |</span>
-            <span>Register</span>
+            <span class="login selected">Login</span>
+            <span>|</span>
+            <span class="register">Register</span>
           </div>
           
           <form>
@@ -217,11 +237,12 @@ const emailDom=document.querySelector('.email');
 const genderDom=document.querySelector('#gender');
 const usernameDom=document.querySelector('#username');
 const passwordDom=document.querySelector('#password');
+
 let clicked=null;
 
 loginTextDom.forEach(mode=>{
   mode.addEventListener("click",()=>{
-    const type=mode.textContent.toLocaleLowerCase().split(" ")[0];
+    const type=mode.textContent.toLocaleLowerCase();
     switch (type) {
       
       case "login":
@@ -232,6 +253,9 @@ loginTextDom.forEach(mode=>{
         buttonDom.textContent="Login";
         mode.classList.toggle("selected");
         genderDom.classList.add("hidden");
+        loginTextDom[0].classList.add("selected");
+        loginTextDom[2].classList.remove("selected");
+        console.log(type)
 
         clicked= "login";
         break;
@@ -240,7 +264,9 @@ loginTextDom.forEach(mode=>{
           emailDom.classList.toggle("hidden");
           genderDom.classList.remove("hidden");
           buttonDom.textContent="Register";
-          clicked="register"
+          loginTextDom[2].classList.add("selected");
+        loginTextDom[0].classList.remove("selected");
+          clicked="register";
           break;
           
           default:

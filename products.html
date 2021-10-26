@@ -274,7 +274,7 @@
             </div>
             <div class="options hidden">
 
-              <a href="laptop.html"><h6>Laptop</h6></a>
+              <a href="laptops.html"><h6>Laptop</h6></a>
               <a href="mobile.html"><h6>Mobile</h6></a>
               <a href="Fashion.html"><h6>Fashion</h6></a>
             </div>
@@ -375,7 +375,11 @@
 const asideDom=document.querySelector("aside");
 const menuDom=document.querySelector("#menuHead");
 const optionDom=document.querySelector(".options")
+
 menuDom.addEventListener("click",(e)=>{  //starts open animation
+  const mode=optionDom.getAttribute('class').split(" ");
+ if(mode.includes("closeMenu")) return console.log(mode);//to avoid clicking while menu is closing
+  console.log(optionDom.getAttribute('class'))
   optionDom.classList.toggle("openMenu");
   optionDom.classList.toggle("hidden");
 })
