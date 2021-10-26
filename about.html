@@ -5,6 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About Us</title>
+     <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
         * {
@@ -13,7 +17,6 @@
         box-sizing: border-box;
       }
       body {
-        background:linear-gradient(grey,white   );
         font-family: 'Roboto', sans-serif;  
       }
       .navbar {
@@ -59,23 +62,23 @@
       a:hover{
         color: red;
       }
-      .desc-1{
+      .desc-1, .desc-2{
         flex:1; 
-        
       }
-      .desc-2{
-        flex:1;
-       
-      }
+      
       .desc-3{
         flex:1;
       list-style-position: inside;
       }
+     
      h3{
        font-size: 20px;
-       color: blue;
+       text-align: center;
      }
     
+     .sd{
+       font-size:20px;
+     }
     </style>
   </head>
   <body>
@@ -86,7 +89,7 @@
         </div>
         <nav>
           <ul>
-            <li><a href="home.html">Home</a></li>
+            <li><a href="home.html"><i class="fa fa-home"></i>Home</a></li>
             <li><a href="about.html">About us</a></li>
             <li><a href="products.html">Products</a></li>
             <li><a href="contact.html">Contact</a></li>
@@ -94,39 +97,41 @@
           </ul>
         </nav>
       </div>
-
+    <br>
     <h1>About Us</h1>
     <br />
-    <h3><i>Making People Life easier through Online Shopping</i></h3>
+    <h3><i>"Making People Life easier through Online Shopping"</i></h3>
     <br />
     <br />
-    <p>
-      Mega store is an online shopping site created to provide genuine goods and
-      services as requested by customers through online. It's main goal is to
+    <p class="sd">
+     <i class="fa fa-arrow-right" ></i> Mega store is an online shopping site created to provide genuine goods and
+      services as requested by customers through online. 
+      It's main goal is to
       make people life easier and convenient by saving their time and providing
       genuine products as requested by the customers.
     </p>
     <br>
     <br>
+    <br>
 
     <div class="description">
       <div class="desc-1">
-      <h1>OUR MISSION</h1>
-      <p>To provide genuine products to the customers across Nepal through
+      <h2>&nbsp;&nbsp;&nbsp;<u>OUR MISSION</u></h2>
+      <p><i class="fa fa-long-arrow-right"></i>To provide genuine products<br>&nbsp;&nbsp;&nbsp; to the customers across Nepal<br>&nbsp;&nbsp;&nbsp;&nbsp;through
           online shopping</p>
           </div>
           <div class="desc-2">
-            <h1>OUR VISION</h1>
-            <p> To become the online store used by every Nepali to meet their
+            <h2>&nbsp;&nbsp;&nbsp;<u>OUR VISION</u></h2>
+            <p><i class="fa fa-long-arrow-right" ></i> To become the online store <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;used by every Nepali to meet<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;their
               shopping needs</p>
           </div>
           <div class="desc-3">
-            <h1>OUR VALUES</h1>
-          <p><ul>   
+            <h2><u>OUR VALUES</u></h2>
+          <p><ol>   
               <li>Availability</li>
               <li>Convenient</li>
               <li>Reliable</li>
-          </ul></p>
+          </ol></p>
           </div>
     </div>
     
