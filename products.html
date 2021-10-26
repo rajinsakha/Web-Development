@@ -66,6 +66,16 @@
 
       #featureProducts{
         flex-direction: column;
+        width: 100%;
+      }
+
+      .topRow,.bottomRow{
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+      }
+
+      .bottomRow{
+        margin: 5% 0px;
       }
 
       #menuHead{
@@ -73,6 +83,7 @@
         align-items: center;
         width:200px;
         margin-left: -80px;
+        justify-content: space-evenly;
       }
 
       #menuHead{
@@ -85,6 +96,8 @@
         height: 0%;
         overflow: hidden;
         box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
+        width: 200px;
+        margin-left: -80px;
         
         
       }
@@ -212,6 +225,19 @@
         left: 50%;
         transform: translateX(-50%);
       }
+
+      .photo{
+        transition: transform 0.5s;
+      }
+
+      .photo:hover{
+        transform: translateY(-5px);
+       
+      }
+
+      .fa{
+        color: red;
+      }
   
     
     </style>
@@ -248,9 +274,9 @@
             </div>
             <div class="options hidden">
 
-              <a href=""><h6>Laptop</h6></a>
-              <a href=""><h6>Mobile</h6></a>
-              <a href=""><h6>Fashion</h6></a>
+              <a href="laptop.html"><h6>Laptop</h6></a>
+              <a href="mobile.html"><h6>Mobile</h6></a>
+              <a href="Fashion.html"><h6>Fashion</h6></a>
             </div>
 
           </div>
@@ -259,33 +285,82 @@
         <h1 class="title">Featured Products</h1>
           <div class="topRow">
 
-            <div class="col-1">
+            <div class="photo">
               <img src="images/watch.jpg" width="200px">
               <h4>Fossil Watch</h4>
-              
+              <div class="rating">
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star-o"></span>
+              </div>
+              <span>NPR 1000.00</span>
             </div>
-            <div class="col-2">
+            <div class="photo">
+              <img src="images/applesmartwatch.jpg" width="200px">
+              <h4>Apple Watch</h4>
+              <div class="rating">
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star-o"></span>
+              </div>
+              <span>NPR 1000.00</span>
               
               
             </div>
             <div class="photo">
-              
-              photo
+              <img src="images/tshirt.jpg" width="200px" height="262">
+              <h4>Shirt</h4>
+              <div class="rating">
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star-o"></span>
+              </div>
+              <span>NPR 1000.00</span>
             </div>
           </div>
           <div class="bottomRow">
 
             <div class="photo">
-              
-              photo
+              <img src="images/roadster-casual-shirt.jpg" width="200px">
+              <h4>Casual Shirt</h4>
+              <div class="rating">
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star-o"></span>
+              </div>
+              <span>NPR 1000.00</span>
             </div>
             <div class="photo">
-              
-              photo
+              <img src="images/category-1.jpg" width="200px" height="262">
+              <h4>Sports Shoes</h4>
+              <div class="rating">
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star-o"></span>
+              </div>
+              <span>NPR 1000.00</span>
             </div>
             <div class="photo">
-              
-              photo
+              <img src="images/watch.jpg" width="200px">
+              <h4>Watch</h4>
+              <div class="rating">
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star-o"></span>
+              </div>
+              <span>NPR 1000.00</span>
             </div>
           </div>
 
@@ -296,24 +371,25 @@
     </div>
   </body>
   <script>
-    const asideDom=document.querySelector("aside");
-    const menuDom=document.querySelector("#menuHead");
-    const optionDom=document.querySelector(".options")
-    menuDom.addEventListener("click",(e)=>{  //starts open animation
-      optionDom.classList.toggle("openMenu");
-      optionDom.classList.toggle("hidden");
-    })
+    
+const asideDom=document.querySelector("aside");
+const menuDom=document.querySelector("#menuHead");
+const optionDom=document.querySelector(".options")
+menuDom.addEventListener("click",(e)=>{  //starts open animation
+  optionDom.classList.toggle("openMenu");
+  optionDom.classList.toggle("hidden");
+})
 
-    asideDom.addEventListener("mouseleave",()=>{ //starts close animatin
-      optionDom.classList.toggle("closeMenu");
+asideDom.addEventListener("mouseleave",()=>{ //starts close animatin
+  optionDom.classList.toggle("closeMenu");
 
-    })
-    optionDom.addEventListener("animationend",(e)=>{ // hides the option div and remove other animation classes
-      if(e.animationName!=="close") return
-      optionDom.classList.add("hidden");
-      optionDom.classList.remove("openMenu");
-      optionDom.classList.remove("closeMenu");
-      
-    })
+})
+optionDom.addEventListener("animationend",(e)=>{ // hides the option div and remove other animation classes
+  if(e.animationName!=="close") return
+  optionDom.classList.add("hidden");
+  optionDom.classList.remove("openMenu");
+  optionDom.classList.remove("closeMenu");
+  
+})
   </script>
 </html>
