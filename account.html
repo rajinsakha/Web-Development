@@ -5,6 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+      <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <style>
          * {
         margin: 0;
@@ -112,16 +116,11 @@
       font-size: 15px;
       font-weight: bold;
       margin-bottom: 1rem;
-  
-  
-
      }
 
      button{
        width:80px;
-       height: 30px;
-       
-       
+       height: 30px; 
      }
 
      #formButton{
@@ -162,7 +161,7 @@
         </div>
         <nav>
           <ul>
-            <li><a href="home.html">Home</a></li>
+            <li><a href="home.html"><i class="fa fa-home"></i>Home</a></li>
             <li><a href="about.html">About us</a></li>
             <li><a href="">Products</a></li>
             <li><a href="contact.html">Contact</a></li>
@@ -259,7 +258,7 @@
             return;
           } 
           console.log(usernameDom.value)
-            formDom.textContent="Thank You!! You Have Sucessfully Logedin";
+            formDom.textContent="Thank You!! You Have Sucessfully Logged In";
             formDom.classList.add("flexTextCenter")
             break;
         
