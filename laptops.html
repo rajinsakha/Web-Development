@@ -5,12 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Laptops</title>
+    <!-- For displaying icon from external source  -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
     <style>
-      /* for displaying font from external source in CSS */
+      /* for displaying font from external source  */
       @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
       * {
         margin: 0;
@@ -70,9 +71,11 @@
       th,
       td {
         width: 100%;
-        border: 1px solid black;
+        border: 1px solid #ddd;
         border-collapse: collapse;
-        background-color: rgb(180, 180, 180);
+        background-color: rgb(248, 124, 8);
+        color: white;
+        padding: 3px 0;
       }
       td {
         width: 75%;
@@ -116,6 +119,9 @@
         left: 50%;
         transform: translateX(-50%);
       }
+      h2 {
+        color: rgb(65, 65, 65);
+      }
     </style>
   </head>
   <body>
@@ -123,11 +129,13 @@
       <!-- Navigation Bar -->
       <div class="navbar">
         <div class="logo">
-          <img src="images/megastore.png" width="125px" />
+          <img src="images/megastore.png" alt="MegaStore Logo" width="125px" />
         </div>
         <nav>
           <ul>
-            <li><a href="home.html"><i class="fa fa-home"></i>Home</a></li>
+            <li>
+              <a href="home.html"><i class="fa fa-home"></i>Home</a>
+            </li>
             <li><a href="about.html">About us</a></li>
             <li><a href="products.html">Products</a></li>
             <li><a href="contact.html">Contact</a></li>
@@ -138,11 +146,15 @@
       <h1 class="title">Featured Laptops</h1>
 
       <!-------- Laptops ------->
+
+      <!-- First Laptop -->
       <div class="row">
+        <!-- Acer Laptop Image -->
         <div class="col-1">
           <img src="images/Acer-Nitro-5.png" alt="Acer-Nitro-5 Laptop" />
           <h4>NPR 111,000.00</h4>
         </div>
+        <!-- Acer Laptop Description -->
         <div class="col-2">
           <h2>
             Acer Nitro 5:Gaming Laptop(2<sup>nd</sup>
@@ -196,11 +208,16 @@
 
       <!-- Second Laptop -->
       <div class="row-2">
+        <!-- Dell Laptop Image -->
         <div class="col-3">
-          <img src="images/dell png.png" alt="dell_g5_laptop" width="100%" />
+          <br />
+          <br />
+          <img src="images/dellG5.png" alt="Dell G5 laptop" width="100%" />
           <h4>NPR 210,000.00</h4>
         </div>
+        <!-- Dell Laptop Description -->
         <div class="col-4">
+          <br />
           <br />
           <h2>DELL G5 15 G5500 2020</h2>
           <br />
