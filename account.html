@@ -134,7 +134,7 @@
       padding-top: 1rem;
       font-size: 1.5rem;
       margin-bottom: 3rem;
-      cursor:default;
+      cursor:pointer;
     }
     .hidden{
       display: none;
@@ -149,6 +149,25 @@
     
   }
 
+  .selected::before{  /*add greem div below selected text */
+    background: green;
+    content: "";
+    width:100%;
+    height: 5px;
+    border-radius: 5px;
+    position: absolute;
+    bottom: -0.6rem;
+  
+
+    left: 50%;
+    transform: translateX(-50%);
+    /* display: inline-block; */
+  }
+
+  .login,.register{
+    position: relative;
+    /* display: inline-block; */
+  }
    
     </style>
 </head>
@@ -174,8 +193,9 @@
         <div id="form">
           
           <div class="form-btn">
-            <span>Login |</span>
-            <span>Register</span>
+            <span class="login selected">Login</span>
+            <span>|</span>
+            <span class="register">Register</span>
           </div>
           
           <form>
@@ -211,71 +231,74 @@
 </body>
 <script>
   const loginTextDom=Array.from(document.querySelector(".form-btn").children);
-  const formDom=document.querySelector("#form");
-  const buttonDom=document.querySelector("button");
-  const emailDom=document.querySelector('.email');
-  const genderDom=document.querySelector('#gender');
-  const usernameDom=document.querySelector('#username');
-  const passwordDom=document.querySelector('#password');
-  let clicked=null;
+const formDom=document.querySelector("#form");
+const buttonDom=document.querySelector("button");
+const emailDom=document.querySelector('.email');
+const genderDom=document.querySelector('#gender');
+const usernameDom=document.querySelector('#username');
+const passwordDom=document.querySelector('#password');
 
-  loginTextDom.forEach(mode=>{
-    mode.addEventListener("click",()=>{
-      const type=mode.textContent.toLocaleLowerCase().split(" ")[0];
-      switch (type) {
-        
-        case "login":
-         
-          if(clicked==="login") return;//this prevent from double clicking
-         
-          emailDom.classList.add("hidden");
-          buttonDom.textContent="Login";
-          mode.classList.toggle("selected");
-          genderDom.classList.add("hidden");
+let clicked=null;
 
-          clicked= "login";
+loginTextDom.forEach(mode=>{
+  mode.addEventListener("click",()=>{
+    const type=mode.textContent.toLocaleLowerCase();
+    switch (type) {
+      
+      case "login":
+       
+        if(clicked==="login") return;//this prevent from double clicking
+       
+        emailDom.classList.add("hidden");
+        buttonDom.textContent="Login";
+        mode.classList.toggle("selected");
+        genderDom.classList.add("hidden");
+        loginTextDom[0].classList.add("selected");
+        loginTextDom[2].classList.remove("selected");
+        console.log(type)
+
+        clicked= "login";
+        break;
+        case "register":
+          if(clicked==="register") return; //this prevent from double clicking
+          emailDom.classList.toggle("hidden");
+          genderDom.classList.remove("hidden");
+          buttonDom.textContent="Register";
+          loginTextDom[2].classList.add("selected");
+        loginTextDom[0].classList.remove("selected");
+          clicked="register";
           break;
-          case "register":
-            if(clicked==="register") return; //this prevent from double clicking
-            emailDom.classList.toggle("hidden");
-            genderDom.classList.remove("hidden");
-            buttonDom.textContent="Register";
-            clicked="register"
-            break;
-            
-            default:
-              break;
-        }
-        
-      })
-    })
-      buttonDom.addEventListener("click",(e)=>{ 
-        const type=buttonDom.textContent.toLocaleLowerCase();
-        switch ( type) {
-          case "login":
-          if(usernameDom.value===""||passwordDom.value===""){//to avoid invalid login 
-            e.preventDefault();//this prevent from reloading of the page
-            return;
-          } 
-          console.log(usernameDom.value)
-            formDom.textContent="Thank You!! You Have Sucessfully Logged In";
-            formDom.classList.add("flexTextCenter")
-            break;
-        
-          case "register":
-          if(usernameDom.value===""||passwordDom.value==="" || emailDom.value===""){//to prevent invaild register
-            e.preventDefault();//this prevents from reloading of the page
-            return;
-          } 
-            formDom.textContent="Thank You!! You Have Sucessfully Registered";
-            formDom.classList.add("flexTextCenter")
-            break;
+          
           default:
             break;
-        }
-      });
-  
-    
-    console.log(loginTextDom)
-    </script>
+      }
+      
+    })
+  })
+    buttonDom.addEventListener("click",(e)=>{ 
+      const type=buttonDom.textContent.toLocaleLowerCase();
+      switch ( type) {
+        case "login":
+        if(usernameDom.value===""||passwordDom.value===""){//to avoid invalid login 
+          e.preventDefault();//this prevent from reloading of the page
+          return;
+        } 
+        console.log(usernameDom.value)
+          formDom.textContent="Thank You!! You Have Sucessfully Logged In";
+          formDom.classList.add("flexTextCenter")
+          break;
+      
+        case "register":
+        if(usernameDom.value===""||passwordDom.value==="" || emailDom.value===""){//to prevent invaild register
+          e.preventDefault();//this prevents from reloading of the page
+          return;
+        } 
+          formDom.textContent="Thank You!! You Have Sucessfully Registered";
+          formDom.classList.add("flexTextCenter")
+          break;
+        default:
+          break;
+      }
+    });
+</script>
 </html>
