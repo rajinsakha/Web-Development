@@ -4,12 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Account</title>
+    <!-- For Displaying Icons from external source -->
       <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-    <style>
+    <style>    
+    /* For displaying font from external source in CSS */
+      @import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300&display=swap');
+
          * {
         margin: 0;
         padding: 0;
@@ -62,6 +66,7 @@
       }
       body {
          background: linear-gradient(grey,white);
+         font-family: 'Barlow', sans-serif;
         }
 
       input ,button{
@@ -98,7 +103,6 @@
 
       /* to center the thank you text after button click */
       .flexTextCenter{
-
         justify-content: center;
       }
       
@@ -127,8 +131,7 @@
       display: flex;
       justify-content: center;
       margin-top: 10%;
-      
-      
+       
     }
     .form-btn{
       padding-top: 1rem;
@@ -174,6 +177,7 @@
 <body>
     <div class="account-page">
      <div class="container">
+       <!-- Navigation Bar -->
       <div class="navbar">
         <div class="logo">
           <img src="images/megastore.png" width="125px" />
@@ -190,6 +194,7 @@
       </div>
       <main>
 
+      <!-- Login/Register Details  -->
         <div id="form">
           
           <div class="form-btn">
