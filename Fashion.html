@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Laptops</title>
+    <title>Fashion</title>
     <!-- For displaying icon from external source -->
         <link
       rel="stylesheet"
@@ -43,7 +43,7 @@
       a {
         text-decoration: none;
         color: black;
-        font-size: 20px;
+        font-size: 22px;
       }
       a:hover {
         color: red;
@@ -65,6 +65,7 @@
         line-height: 60px;
         color: #555;
       }
+        /* To display line after 'Featured Fashion Products' Heading  */
       .title::after {
         content: "";
         background: #ff523b;
@@ -97,6 +98,9 @@
       .rating .fa{
           color: #ff523b
       }
+      .active {
+        border-bottom: 2px solid red;
+      }
     </style>
   </head>
   <body>
@@ -110,7 +114,7 @@
           <ul>
             <li><a href="home.html"><i class="fa fa-home"></i>Home</a></li>
             <li><a href="about.html">About us</a></li>
-            <li><a href="products.html">Products</a></li>
+            <li><a href="products.html" class="active">Products</a></li>
             <li><a href="contact.html">Contact</a></li>
             <li><a href="account.html">Account</a></li>
           </ul>
@@ -121,7 +125,7 @@
       <!-- Fashion Products -->
       <div class="row-1">
           <div class="col-1">
-            <img src="images/category-1.jpg" width="200px" />
+            <img src="images/orangeshoes.jpg" width="200px" />
             <h4>Orange Shoes</h4>
             <div class="rating">
                 <i class="fa fa-star"></i>
@@ -145,7 +149,7 @@
             <p>NPR 2500.00</p>
           </div>
           <div class="col-3">
-              <img src="images/tshirt.jpg" width="200px" height="219.64">
+              <img src="images/brand-shirt.jpg" width="200px" height="219.64">
               <h4>Brand Shirt</h4>
               <div class="rating">
                 <i class="fa fa-star"></i>
@@ -157,7 +161,7 @@
               <p>NPR 2000.00</p>
           </div>
           <div class="col-4">
-              <img src="images/roadster-casual-shirt.jpg" width="200px" height="219.64px">
+              <img src="images/casual-shirt.jpg" width="200px" height="219.64px">
               <h4>Casual Shirt</h4>
               <div class="rating">
                 <i class="fa fa-star"></i>

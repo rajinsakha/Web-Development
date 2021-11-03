@@ -20,7 +20,7 @@
       }
       body {
         font-family: "Poppins", sans-serif;
-        background: linear-gradient(grey, white);
+        background-image: url(images/whitegreybackground.jpg);
       }
       .navbar {
         display: flex; /*It makes the container flexible*/
@@ -44,7 +44,7 @@
       a {
         text-decoration: none;
         color: black;
-        font-size: 20px;
+        font-size: 22px;
       }
       p {
         color: black;
@@ -117,6 +117,11 @@
       .form{
         font-size: 24px;
       }
+
+    .active{
+      border-bottom: 2px solid red;
+    }
+
     </style>
   </head>
   <body>
@@ -131,7 +136,7 @@
             <li><a href="home.html"><i class="fa fa-home"></i>Home</a></li>
             <li><a href="about.html">About us</a></li>
             <li><a href="products.html">Products</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
             <li><a href="account.html">Account</a></li>
           </ul>
         </nav>
@@ -176,16 +181,10 @@
           <input type="submit" value="Send Message" class="submit" />
         </div>
         <div class="info">
-          <i class="fa fa-phone" aria-hidden="true" style="font-size: 30px;">&nbsp;9849894866</i><br><br>
+          <i class="fa fa-phone"  style="font-size: 30px;">&nbsp;9849894866</i><br><br>
           <i class="fa fa-envelope" style="font-size: 20px;"></i>
-            <a class="mail" href="mailto:rajinsakha07@gmail.com"
-              >&nbsp;rajinsakha07@gmail.com</a ></i><br><br>
-          <h2>Main Branch Kathmandu</h2>
-          <h3>
-            Tinkune,
-            Kathmandu,<br />
-            Nepal
-          </h3>
+            <a class="mail" href="mailto:rajinsakha07@gmail.com">&nbsp;rajinsakha07@gmail.com</a ></i><br><br>
+          <i class="fa fa-map-marker" style="font-size: 30px;">&nbsp;Main Branch Kathmandu<br>Tinkune,Kathmandu<br>Nepal</i>
         </div>
       </div>
     </div>

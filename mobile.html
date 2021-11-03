@@ -44,7 +44,7 @@
       a {
         text-decoration: none;
         color: black;
-        font-size: 20px;
+        font-size: 22px;
       }
       a:hover {
         color: red;
@@ -69,6 +69,7 @@
         line-height: 60px;
         color: #555;
       }
+        /* To display line after 'Featured Mobile' Heading  */
       .title::after {
         content: "";
         background: #ff523b;
@@ -97,8 +98,8 @@
         width: 100%;
         border: 1px solid #ddd;
         border-collapse: collapse;
-         background-color: #47bfff ;
-         padding: 3.5px 0px;
+        background-color: #47bfff ;
+        padding: 4.5px 0px;
       }
       th{
         color: white;
@@ -115,9 +116,21 @@
         color: whitesmoke;
       }
       p{
-        font-size: 20px;
+        font-size: 22px;
         color: red;
-        padding-left: 120px;
+        padding-left: 80px;
+      }
+      button {
+        display: inline-block;
+        background: #e4260d;
+        color: #fff;
+        padding: 8px 30px;
+        margin: 10px 80px;
+        border-radius: 25px;
+        font-size: 15px ;
+      }
+      .active {
+        border-bottom: 2px solid red;
       }
 </style>
 <body>
@@ -133,7 +146,7 @@
                 <a href="home.html"><i class="fa fa-home"></i>Home</a>
               </li>
               <li><a href="about.html">About us</a></li>
-              <li><a href="products.html">Products</a></li>
+              <li><a href="products.html" class="active">Products</a></li>
               <li><a href="contact.html">Contact</a></li>
               <li><a href="account.html">Account</a></li>
             </ul>
@@ -145,7 +158,7 @@
                 <h1 class="title">Featured Mobile</h1>
                 <h1 class="mobile">iPhone 13 Pro</h2>
                   <!-- iPhone 13 Pro Video -->
-                <iframe width="100%" height="500" src="https://www.youtube.com/embed/XKfgdkcIUxw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <video width="100%" height="500px" controls><source src="media/iPhone13Pro.mp4" type="video/mp4"></video>
             </div>
            <br>
            <br>
@@ -155,6 +168,7 @@
               <div class="col-1">
                 <img src="images/iPhone13pro.jpg" alt="iPhone 13 Pro" width="300px">
                 <p>NPR 175,000.00</p>
+                <button onclick="button()">Add to Cart</button>
               </div>
               <!-- iPhone 13 Pro Specs -->
               <div id="col-2">
@@ -211,4 +225,10 @@
             </div>
           </div>
 </body>
+<script>
+  function button()
+  {
+    alert("You have successfully added this item to the cart");
+  }
+</script>
 </html>

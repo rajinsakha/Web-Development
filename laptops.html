@@ -43,7 +43,7 @@
       a {
         text-decoration: none;
         color: black;
-        font-size: 20px;
+        font-size: 22px;
       }
       a:hover {
         color: red;
@@ -75,7 +75,7 @@
         border-collapse: collapse;
         background-color: rgb(248, 124, 8);
         color: white;
-        padding: 3px 0;
+        padding: 4.5px 0;
       }
       td {
         width: 75%;
@@ -89,7 +89,7 @@
       h4 {
         color: red;
         font-family: "Times New Roman", Times, serif;
-        font-size: 20px;
+        font-size: 22px;
         padding-left: 170px;
       }
       .row-2 {
@@ -108,6 +108,7 @@
         line-height: 60px;
         color: #555;
       }
+      /* To display line after 'Featured Laptops' Heading  */
       .title::after {
         content: "";
         background: #ff523b;
@@ -121,6 +122,18 @@
       }
       h2 {
         color: rgb(65, 65, 65);
+      }
+      button {
+        display: inline-block;
+        background: #e4260d;
+        color: #fff;
+        padding: 8px 30px;
+        margin: 10px 170px;
+        border-radius: 25px;
+        font-size: 15px;
+      }
+      .active {
+        border-bottom: 2px solid red;
       }
     </style>
   </head>
@@ -137,7 +150,7 @@
               <a href="home.html"><i class="fa fa-home"></i>Home</a>
             </li>
             <li><a href="about.html">About us</a></li>
-            <li><a href="products.html">Products</a></li>
+            <li><a href="products.html" class="active">Products</a></li>
             <li><a href="contact.html">Contact</a></li>
             <li><a href="account.html">Account</a></li>
           </ul>
@@ -153,11 +166,12 @@
         <div class="col-1">
           <img src="images/Acer-Nitro-5.png" alt="Acer-Nitro-5 Laptop" />
           <h4>NPR 111,000.00</h4>
+          <button onclick="button()">Add to Cart</button>
         </div>
         <!-- Acer Laptop Description -->
         <div class="col-2">
           <h2>
-            Acer Nitro 5:Gaming Laptop(2<sup>nd</sup>
+            <u>Acer Nitro 5:Gaming Laptop</u>(2<sup>nd</sup>
             Edition)
           </h2>
           <br />
@@ -214,12 +228,13 @@
           <br />
           <img src="images/dellG5.png" alt="Dell G5 laptop" width="100%" />
           <h4>NPR 210,000.00</h4>
+          <button onclick="button()">Add to Cart</button>
         </div>
         <!-- Dell Laptop Description -->
         <div class="col-4">
           <br />
           <br />
-          <h2>DELL G5 15 G5500 2020</h2>
+          <h2><u>DELL G5 15 G5500 2020</u></h2>
           <br />
           <table>
             <tr>
@@ -270,4 +285,10 @@
       </div>
     </div>
   </body>
+
+  <script>
+    function button() {
+      alert("You have successfully added this item to the cart.");
+    }
+  </script>
 </html>
