@@ -235,43 +235,52 @@
   </main>
 </body>
 <script>
-  const loginTextDom=Array.from(document.querySelector(".form-btn").children);
-const formDom=document.querySelector("#form");
-const buttonDom=document.querySelector("button");
-const emailDom=document.querySelector('.email');
-const genderDom=document.querySelector('#gender');
-const usernameDom=document.querySelector('#username');
-const passwordDom=document.querySelector('#password');
+const loginTextDom=Array.from(document.querySelector(".form-btn").children);//login and resgister div
+const formDom=document.querySelector("#form");// this is form 
+const buttonDom=document.querySelector("button");//this is buttom
+const emailDom=document.querySelector('.email');//this is email input
+const genderDom=document.querySelector('#gender');//this is radio input
+const usernameDom=document.querySelector('#username');//this is username input
+const passwordDom=document.querySelector('#password');//this is password input
 
-let clicked=null;
+let clicked=null; //to prevent form double clicking.
 
+/* 
+below function will:-
+add event listener on register and login text which in array logintextdom,
+when clicked on login text login content will display ,
+when cliced on register text register content will display,
+add selected class on login when login is clicked ,
+add selected class on reigister when reigister is clicked ,
+remove selected class on login when register is clicked ,
+remove selected class on reigister when login  is clicked 
+*/
 loginTextDom.forEach(mode=>{
   mode.addEventListener("click",()=>{
-    const type=mode.textContent.toLocaleLowerCase();
-    switch (type) {
+    const type=mode.textContent.toLocaleLowerCase();// converts the string into lowersting so that no problem arise while comparing strings
+    switch (type) {  // use select case
       
-      case "login":
+      case "login": //if type is login
        
-        if(clicked==="login") return;//this prevent from double clicking
+        if(clicked==="login") return;//this prevent from double clicking and reloading. clicked will be login only when it is already clicked
        
-        emailDom.classList.add("hidden");
-        buttonDom.textContent="Login";
-        mode.classList.toggle("selected");
-        genderDom.classList.add("hidden");
-        loginTextDom[0].classList.add("selected");
-        loginTextDom[2].classList.remove("selected");
-        console.log(type)
-
-        clicked= "login";
+        emailDom.classList.add("hidden");//hides the email input . no need of this in login page
+        buttonDom.textContent="Login";// cahange the text of the button to login
+        mode.classList.toggle("selected");// adds a selected class to login div 
+        genderDom.classList.add("hidden");// hides radio input .no need of this in  login paage
+        loginTextDom[0].classList.add("selected");//adds a selected class to login div as logintextdom =["login","|","register"]
+        loginTextDom[2].classList.remove("selected");//removes  selected class from register div as logintextdom =['login","|","register"]
+        clicked= "login";//to prevent from double clicking and reloading
         break;
-        case "register":
-          if(clicked==="register") return; //this prevent from double clicking
-          emailDom.classList.toggle("hidden");
-          genderDom.classList.remove("hidden");
-          buttonDom.textContent="Register";
-          loginTextDom[2].classList.add("selected");
-        loginTextDom[0].classList.remove("selected");
-          clicked="register";
+        case "register"://if type is register
+          if(clicked==="register") return; //this prevent from double clicking and reloading. clicked will be register only when it is already clicked
+       
+          emailDom.classList.toggle("hidden");//if hidden class is present remove else add it
+          genderDom.classList.remove("hidden");// remove hidden class from radio input
+          buttonDom.textContent="Register";//change the text of button to reigster
+          loginTextDom[2].classList.add("selected");//add  selected class to register div as logintextdom =['login","|","register"] and logintextdom[2]= register
+        loginTextDom[0].classList.remove("selected");//removes  selected class from login div as logintextdom =['login","|","register"]and logintextdom[0]= login
+          clicked="register";//to prevent from double clicking and reloading
           break;
           
           default:
@@ -280,26 +289,33 @@ loginTextDom.forEach(mode=>{
       
     })
   })
+
+
+  /*
+  the function will 
+  add event listner to the butoon 
+  if input fileds are empty then button will not work 
+  thank you message will be display after clicking the button if all the input fields are entered .
+  */
     buttonDom.addEventListener("click",(e)=>{ 
-      const type=buttonDom.textContent.toLocaleLowerCase();
+      const type=buttonDom.textContent.toLocaleLowerCase();// converts the string into lowersting so that no problem arise while comparing
       switch ( type) {
-        case "login":
-        if(usernameDom.value===""||passwordDom.value===""){//to avoid invalid login 
+        case "login": //if type is login 
+        if(usernameDom.value===""||passwordDom.value===""){//to avoid invalid login when input are empty
           e.preventDefault();//this prevent from reloading of the page
           return;
         } 
-        console.log(usernameDom.value)
-          formDom.textContent="Thank You!! You Have Sucessfully Logged In";
-          formDom.classList.add("flexTextCenter")
+          formDom.textContent="Thank You!! You Have Sucessfully Logged In";//dispaly thank you message .
+          formDom.classList.add("flexTextCenter");//add  flextextcenter class to the formDom
           break;
       
-        case "register":
-        if(usernameDom.value===""||passwordDom.value==="" || emailDom.value===""){//to prevent invaild register
+        case "register"://if type is register
+        if(usernameDom.value===""||passwordDom.value==="" || emailDom.value===""){//to avoid invalid login when input are empty
           e.preventDefault();//this prevents from reloading of the page
           return;
         } 
-          formDom.textContent="Thank You!! You Have Sucessfully Registered";
-          formDom.classList.add("flexTextCenter")
+          formDom.textContent="Thank You!! You Have Sucessfully Registered";//dispaly thank you message .
+          formDom.classList.add("flexTextCenter");//add  flextextcenter class to the formDom
           break;
         default:
           break;

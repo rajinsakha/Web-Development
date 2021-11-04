@@ -90,6 +90,7 @@
         border-radius: 5px;
         background-color: #f2f2f2;
         padding: 30px;
+        
       }
       .mail {
         font-size: 20px;
@@ -191,13 +192,14 @@
   </body>
   <script>
     
-    const buttonDom=document.querySelector(".submit");
-    const formDom=document.querySelector(".form")
-    buttonDom.addEventListener("mousedown",()=>{
-      formDom.textContent="Thank You For Contating Us!!We Will Get Back To You Soon.";
-      formDom.style.display="flex";
+    const buttonDom=document.querySelector(".submit");//this is the buttom 
+    const formDom=document.querySelector(".form")// this is the form 
+    // add event listerner to the button 
+    buttonDom.addEventListener("mousedown",()=>{ 
+      formDom.textContent="Thank You For Contating Us!!We Will Get Back To You Soon.";//cahnge the content of form 
+      formDom.style.display="flex";//add css display:flex to the formDom
       
-      formDom.style["align-items"]="center"
+      formDom.style["align-items"]="center";// add css aligin-items : center to the formDom 
     })
   </script>
 </html>

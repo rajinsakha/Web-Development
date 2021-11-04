@@ -373,29 +373,39 @@
   </body>
   <script>
     
-const asideDom=document.querySelector("aside");
-const menuDom=document.querySelector("#menuHead");
-const optionDom=document.querySelector(".options")
+const asideDom=document.querySelector("aside");//this ts the aside
+const menuDom=document.querySelector("#menuHead");//this the the div with id menuHead
+const optionDom=document.querySelector(".options")//this is the div with class options 
+ 
 
+//add eventlistener to menuDom 
+//incerase the height of menudom which gives an opening animation when the click event is triggred 
 menuDom.addEventListener("click",(e)=>{  //starts open animation
-  const mode=optionDom.getAttribute('class').split(" ");
+  const mode=optionDom.getAttribute('class').split(" ");//get all the class of optionDom and splits them with " " and returns an array
  if(mode.includes("closeMenu")){
   optionDom.classList.remove("closeMenu");
  } //to avoid clicking while menu is closing
-  console.log(optionDom.getAttribute('class'))
-  optionDom.classList.toggle("openMenu");
-  optionDom.classList.toggle("hidden");
+  optionDom.classList.toggle("openMenu");//if openMenu class is present on optionDom then remove it else add it 
+  optionDom.classList.toggle("hidden");//if hidden class is present on optionDom then remove it else add it 
 })
 
+
+// add eventListener to asideDom
+// shrinks the height of option dom which gives the closing animation when mouse leaves
 asideDom.addEventListener("mouseleave",()=>{ //starts close animatin
-  optionDom.classList.toggle("closeMenu");
+  optionDom.classList.toggle("closeMenu");//if closeMenu is present on optionDom then remove if else add it
 
 })
-optionDom.addEventListener("animationend",(e)=>{ // hides the option div and remove other animation classes
-  if(e.animationName!=="close") return
-  optionDom.classList.add("hidden");
-  optionDom.classList.remove("openMenu");
-  optionDom.classList.remove("closeMenu");
+
+/*
+add event listenet to option when 
+when closing animation ends hide the option dom and remove all the unnecessary classes so that everything works fine for next time
+*/
+optionDom.addEventListener("animationend",(e)=>{ 
+  if(e.animationName!=="close") return; // this ensure that this function will run only when closing not opening
+  optionDom.classList.add("hidden");// adds the class hidden to the option dom 
+  optionDom.classList.remove("openMenu");//remove the class open menu from the div 
+  optionDom.classList.remove("closeMenu");// remove the class close menu form the div .
   
 })
   </script>
