@@ -22,6 +22,7 @@
         font-family: "Poppins", sans-serif;
         background-image: url(images/whitegreybackground.jpg);
       }
+      /* Navigation Bar CSS */
       .navbar {
         display: flex; /*It makes the container flexible*/
         align-items: center;
@@ -56,7 +57,7 @@
         padding-left: 25px;
         padding-right: 25px;
       }
-
+/* Form CSS */
       input[type="text"],
       [type="tel"],
       [type="email"],
@@ -90,6 +91,7 @@
         border-radius: 5px;
         background-color: #f2f2f2;
         padding: 30px;
+        
       }
       .mail {
         font-size: 20px;
@@ -128,6 +130,7 @@
     <div class="container">
       <!-- Navigation Bar -->
       <div class="navbar">
+        <!-- MegaStore Logo -->
         <div class="logo">
           <img src="images/megastore.png" width="125px" />
         </div>
@@ -181,23 +184,26 @@
           <input type="submit" value="Send Message" class="submit" />
         </div>
         <div class="info">
+          <!-- To display phone icon -->
           <i class="fa fa-phone" style="font-size: 30px;">&nbsp;9849894866</i><br><br>
+          <!-- To display email icon -->
           <i class="fa fa-envelope" style="font-size: 20px;"></i>
             <a class="mail" href="mailto:rajinsakha07@gmail.com">&nbsp;rajinsakha07@gmail.com</a ></i><br><br>
+              <!-- To display location icon -->
           <i class="fa fa-map-marker" style="font-size: 30px;">&nbsp;Main Branch Kathmandu<br>Tinkune,Kathmandu<br>Nepal</i>
         </div>
       </div>
     </div>
   </body>
   <script>
-    
-    const buttonDom=document.querySelector(".submit");
-    const formDom=document.querySelector(".form")
-    buttonDom.addEventListener("mousedown",()=>{
-      formDom.textContent="Thank You For Contacting Us!!We Will Get Back To You Soon.";
-      formDom.style.display="flex";
-      
-      formDom.style["align-items"]="center"
+    const buttonDom=document.querySelector(".submit");//this is the button
+    const formDom=document.querySelector(".form")// this is the form 
+    // add event listerner to the button 
+    buttonDom.addEventListener("mousedown",()=>
+    { 
+      formDom.textContent="Thank You For Contacting Us!!We Will Get Back To You Soon.";//change the content of form 
+      formDom.style.display="flex";//add css display:flex to the formDom
+      formDom.style["align-items"]="center";// add css aligin-items : center to the formDom 
     })
   </script>
 </html>
